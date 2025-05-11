@@ -4,10 +4,13 @@ import './style.css';
 
 export const HomePage = () => {
   const [currency, setCurrency] = useState('USD');
+  const [fromValue, setFromValue] = useState('')
 
   const handleCurrencyChange = (e) => {
     setCurrency(e.target.value);
+    setFromValue(e.target.value);
   };
+
 
   return (
     <div className="container">
@@ -27,7 +30,7 @@ export const HomePage = () => {
             </select>
           </div>
         </form>
-        <Rate />
+        <Rate from={fromValue}/>
       </div>
     </div>
   );
